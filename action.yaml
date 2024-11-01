@@ -2,7 +2,8 @@ name: Dump Context
 runs:
   using: composite
   steps:
-    - run: |
+    - shell: bash
+      run: |
         printf "%30s = %s\n" github.base_ref ${{github.base_ref }}
         printf "%30s = %s\n" github.event.inputs.dry-run ${{ github.event.inputs.dry-run }}
         printf "%30s = %s\n" github.event.ref ${{ github.event.ref }}
